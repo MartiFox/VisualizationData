@@ -1,86 +1,90 @@
+
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Visualization</title>
-<link rel="stylesheet" href="style.css">
-<link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
-<script src="https://d3js.org/d3.v5.min.js"></script>
-</head>
-<body bgcolor="#e04132">
-
-	<div id="container">
-		<div id="header">
-			<table>
-				<tr>
-					<td align=center><a href=index.html><img
-							src=images/social.png width="200" height="100" border=0> </a></td>
-				</tr>
-			</table>
-		</div>
-		<table id="nav">
-			<tr>
-				<td align=center width=60% height="200">
-					<!--   <a href=subscr.jsp><img src=images/diagram.png width="100" height="100" border=0><br>Диаграммы</a> -->
-					<a href=diagrams><img src=images/diagram.png width="100"
-						height="100" border=0><br>Диаграммы</a>
-				</td>
-			</tr>
-			<tr>
-				<!--   <td align=center width=33%> <a href=graphics.html><img src=images/graphic.png width="100" height="100" border=0><br>Графики</a> </td> -->
-				<td align=center width=60%><a href=maps.html><img
-						src=images/map.png width="100" height="100" border=0><br>Карты</a>
-				</td>
-			</tr>
-		</table>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Visualization</title>
+	<link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+	<!-- Google Webfonts -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,500' rel='stylesheet' type='text/css'> 
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css"> 
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="css/simple-line-icons.css">
+	<!-- Theme Style -->
+	<link rel="stylesheet" href="css/style.css">
 
 
-		<table id="aside">
-			<tr>
-				<td align=center><a href=help><img src=images/thankyou.jpg
-						width="100" height="100" border=0><br> Авторизация</a></td>
-			</tr>
-
-			<tr>
-				<td align=center><a href=contacts><img
-						src=images/contact.jpeg width="100" height="100" border=0><br>Контакты</a></td>
-			</tr>
-
-			<tr>
-				<td align=center><a href=support.html><img
-						src=images/help.png width="100" height="100" border=0><br>Помощь</a></td>
-			</tr>
-		</table>
-
-
-		<div id="content">
-			<div id="center">
-				<img src=images/image3.jpg width=150% height=150%>
-			</div>
-			<!--  	<script src="2.js"></script>  -->
-			<!--  	<img src="images/57512749.gif" width="1360" height="150" align="middle"> </a> -->
-			<!--   <a href="demoServlet">Servlet</a> <a href="../src/NewFile.html">Page2</a> -->
-
-		</div>
-
-		<footer>
-			<div class="footer-bg">
-				<div class="copyright">
-					<p></p>
-					<p>
-						<strong>Визуализация данных 2018</strong>
-					</p>
-					<p>&copy; AK</p>
+	</head>
+	<body>
+		
+	<header id="fh5co-header" role="banner">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="navbar-header"> 
+						<!-- Mobile Toggle Menu Button -->
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle visible-xs-block" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+						<a class="navbar-brand" href="index.html"><img
+							src=images/social.png width="200" height="100" border=0> </a>
+						</div>
+						<div id="fh5co-navbar" class="navbar-collapse collapse">
+							<ul class="nav navbar-nav navbar-right">
+								<li class="active"><a href=help><img src=images/thankyou.jpg
+						width="100" height="100" border=0><span>Авторизация <span class="border"></span></span></a></li>
+								<li><a href=contacts><img src=images/contact.jpeg width="100" height="100" border=0><span>Контакты<span class="border"></span></span></a></li>
+								<li><a href="support.html"><img src=images/help.png width="100" height="100" border=0><span>Помощь<span class="border"></span></span></a></li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
-		</footer>
+		</nav>
+	</header>
+
+
+
+		<div id="fh5co-portfolio">
+			<div class="fh5co-portfolio-item ">
+				<div class="fh5co-portfolio-figure animate-box" style="background-image: url(images/image2.jpg) ;"></div>
+				<div class="fh5co-portfolio-description">
+					<h2><a href=diagrams><img src=images/diagram.png width="100"
+						height="100" border=0> Диаграммы</a></h2>
+					<p>Постройте различные диаграммы по своим данным</p>
+					<p><a href="diagrams" class="btn btn-primary">Построить</a></p>
+				</div>
+			</div>
+			<div class="fh5co-portfolio-item fh5co-img-right">
+				<div class="fh5co-portfolio-figure animate-box" style="background-image: url(images/world_map.png);"></div>
+				<div class="fh5co-portfolio-description">
+					<h2><a href=maps><img src=images/map.png width="100" 
+					height="100" border=0> Карты</a></h2>
+					<p>Визуализируйте данные на карте мира или стран</p>
+					<p><a href=maps class="btn btn-primary">Посмотреть</a></p>
+				</div>
+			</div>	
+
 	</div>
 
+	<footer id="fh5co-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1 text-center">
+					<p>&copy; 2018 Visualization Data <br>Created by AK</p>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 
 
 
-
-
-</body>
+	
+	</body>
 </html>
