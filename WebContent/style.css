@@ -1,0 +1,123 @@
+@charset "UTF-8";
+body {
+  font-family: Arial, Verdana,  sans-serif; /* Семейство шрифтов */
+  font-size: 11pt; /* Размер основного шрифта в пунктах  */
+  background-color: #e04132; /* Цвет фона веб-страницы */
+  color: #333; /* Цвет основного текста */ 
+  
+  margin: 0; /* Убираем отступы */
+   }
+   #center {
+   float:center;
+	margin: 0; /* Отступы вокруг элемента */
+    width: 70%;
+   }
+   
+   .left {
+   margin-top: 10%;
+   align=left;
+   }
+   
+   .bold {
+   font-weight: 600;
+   }
+}
+h1 {
+  color: #a52a2a; /* Цвет заголовка */
+  font-size: 24pt; /* Размер шрифта в пунктах */
+  font-family: Georgia, Times, serif; /* Семейство шрифтов */
+  font-weight: normal; /* Нормальное начертание текста  */
+}
+
+   h2 { margin: 0 0 1em; }
+   #footer { 
+    clear: both; /* Отменяем действие float */
+    padding: 5px; /* Отступы вокруг текста */
+    background: #D71920; /* Цвет фона подвала */
+   }
+p {
+  border-bottom: 1px solid #999; /* Параметры линии снизу */
+  padding-left: 10px; /* Отступ от линии слева до текста  */
+  padding-bottom: 10px; /* Отступ от линии снизу до текста  */
+}
+
+	
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+a:link {
+  color: #e8402f;
+}
+
+a:visited {
+  color: purple;
+}
+
+a:focus, a:hover {
+  border-bottom: 1px solid;
+}
+
+a:active {
+  color: red;
+}
+
+   #container {
+    width: 800px; /* Ширина макета */
+/*    height: 637px; */
+    margin: 0 auto; /* Выравниваем по центру */
+    background: white; /* Цвет колонок */
+   }
+   #header { 
+   width: 1000px;
+   margin: 0 auto; /* Выравниваем по центру */
+    font-size: 2.2em; /* Размер текста */
+    text-align: center; /* Выравнивание по центру */
+    padding: 5px; /* Отступы вокруг текста */
+    background: #D71920; /* Цвет фона шапки */
+   }
+   #nav, #aside {
+    float: left; width: 120px; padding: 5px; color: white;
+   }
+   #content {
+    background: white;
+    margin: 0 250px; /* Ширина колонок */
+    padding: 10px;
+   }
+   #aside {
+    float: right; color: #000;
+   }
+   
+   
+   
+   footer { 
+  background: url(images/image.png) 50% 53px no-repeat; /* Фоновый рисунок травы */
+  margin-top: -42px;  Поднимаем вверх */
+  overflow: auto; /* Отменяем схлопывающиеся отступы */
+  position: relative; /* Относительное позиционирование */
+}
+.lion {
+  position: absolute; /* Абсолютное позиционирование */
+  left: 50%; /* По центру */
+  margin-left: -347px; /* Сдвигаем влево */
+  top: 3px; /* От верхнего края */
+}
+.footer-bg { 
+  background: #2b8afb; /* Цвет фона подвала */
+  margin-top: 46px; /* Сдвигаем вниз */
+}
+.copyright {
+  width: 540px; /* Ширина макета без полей */
+  padding: 0 10px 10px; /* Поля */
+  margin: auto; /* Выравнивание по центру */
+  color: #d71920; /* Цвет текста */
+  
+}
+.copyright p {
+  margin: 0 0 10px 120px; /* Отступы текста */ 
+}
+
