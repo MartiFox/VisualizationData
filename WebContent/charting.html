@@ -1,0 +1,227 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//RU" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Создание графиков и диаграмм онлайн </title>
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+	<!-- Google Webfonts -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,500' rel='stylesheet' type='text/css'> 
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css"> 
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="css/simple-line-icons.css">
+	<!-- Theme Style -->
+	<link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+    <meta name="keywords" content="графики, диаграммы, онлайн, создание, изображение, график, диаграмма" />
+    <meta name="description" content="Создайте график онлайн, в окне браузера, получите готовое изображение для публикации на своем сайте, форуме, блоге" />
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<style type="text/css">
+body {
+    background-color: #fff;
+    padding: 0px;
+    margin: 0px;
+    font-size: 15px;
+    font-family: Arial;
+    color: #333;
+}
+#maintable {
+    background-color: #EFF2F3;
+    border: 1px solid #1e1e1e;
+}
+
+a {
+    color: #08457e;
+}
+p, span {
+
+}
+#maintable td {
+    border: 1px solid #EFF2F3;
+    padding: 5px;
+}
+
+#maintable #image {
+    color: #1e1e1e;
+    background-color: #fff;
+    border: 1px solid #333;
+}
+
+#panel span {
+    background-color: #f4f4f4;
+    border: 1px solid #333;
+    padding: 2px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+}
+.num {
+    width: 50px;
+}
+.str {
+    width: 80px;
+}
+#liquid-round {
+    margin:0px auto;
+    background:#fff url(../template/images/leftside.gif) repeat-y left top;
+}
+
+</style>
+<script type="text/javascript">
+var dvs = new Array;
+dvs[1] = 'Hello';
+dvs[2] = 'World';
+var dvnum = 2;
+function urlencode (str) {
+    str = (str+'').toString();
+    return encodeURIComponent(str).replace(/!/g, '%21').replace(/'/g, '%27').replace(/\(/g, '%28').
+                                                                    replace(/\)/g, '%29').replace(/\*/g, '%2A').replace(/%20/g, '+');
+}
+
+function fmax(a){
+    var maxEl = parseInt(a[0]);
+    for(var el in a) {
+        if(parseInt(a[el]) >= maxEl) maxEl = parseInt(a[el]);
+    }
+    return maxEl;
+}
+
+function g_set() {
+    var width, height, type, color, title, src, s1, s2, dname, dvalue;
+    width = document.getElementById('width').value;
+    height = document.getElementById('height').value;
+    type = document.getElementById('type').value;
+    color = document.getElementById('color').value;
+    title = document.getElementById('title').value;
+    src = 'http://chart.apis.google.com/chart?cht='+type+'&chbh=a&chtt='+urlencode(title)+'&chco='+color+'&chs='+width+'x'+height+'';
+    s1 = '&chd=t:';
+    s2 = '&chl=';
+    var mv = new Array;
+    var max = 100;
+    for(var el in dvs) {
+        dname = document.getElementById('dname'+el).value;
+        dvalue = document.getElementById('dvalue'+el).value
+        if(dname == '' | dvalue == '') {
+            alert('Все поля должны быть заполнены!');
+            return false;
+        }
+        if(s1 != '&chd=t:') s1 += ','+urlencode(dvalue);
+        else s1 += urlencode(dvalue);
+        if(s2 != '&chl=') s2 += '|'+urlencode(dname);
+        else s2 += urlencode(dname);
+        mv.push(dvalue);
+    }
+    document.image.src = src+s1+s2+'&chds=0,'+fmax(mv);
+    document.getElementById('link').value = document.image.src;
+}
+
+function createdv() {
+    dvnum++;
+    document.getElementById('cv'+(dvnum-1)).innerHTML = '<div id="dv'+dvnum+'"><input class="str" id="dname'+dvnum+'" type="text" name="dname['+dvnum+']" /> = <input class="num" id="dvalue'+dvnum+'" type="text" name="dvalue['+dvnum+']" /> <span onclick="deletedv('+dvnum+');" title="Удалить"> - </span></div><div id="cv'+dvnum+'"></div>';
+    dvs[dvnum] = dvnum;
+    document.getElementById('dname'+dvnum).focus();
+}
+
+function deletedv(dvid) {
+    document.getElementById('dv'+dvid).innerHTML = '';
+    delete(dvs[dvid]);
+}
+
+</script>
+</head>
+<body>
+
+
+<header id="fh5co-header" role="banner">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="navbar-header"> 
+						<!-- Mobile Toggle Menu Button -->
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle visible-xs-block" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+						<a class="navbar-brand" href="index.html"><img
+							src=images/social.png width="200" height="100" border=0> </a>
+						</div>
+						<div id="fh5co-navbar" class="navbar-collapse collapse">
+							<ul class="nav navbar-nav navbar-right">
+								<li class="active"><a href=help><img src=images/thankyou.jpg
+						width="100" height="100" border=0><span>Авторизация <span class="border"></span></span></a></li>
+								<li><a href=contacts><img src=images/contact.jpeg width="100" height="100" border=0><span>Контакты<span class="border"></span></span></a></li>
+								<li><a href="support.html"><img src=images/help.png width="100" height="100" border=0><span>Помощь<span class="border"></span></span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+<center>
+<br />
+<div id="liquid-round">
+
+<table border="1" cellspacing="0" id="maintable">
+    <tr>
+        <td colspan="3">
+        <span>Параметры:</span> <input type="text" name="title" id="title" value="Название диаграммы" /><select name="width" id="width" onchange="g_set();">
+            <option value="300">200</option>
+            <option value="300">300</option>
+            <option value="400" selected="selected">400</option>
+            <option value="500">500</option>
+            <option value="700">700</option>
+            <option value="800">800</option>
+            <option value="900">900</option>
+            <option value="1000">1000</option>
+        </select>
+        x
+        <select name="height" id="height" onchange="g_set();">
+            <option value="100">100</option>
+            <option value="200" selected="selected">200</option>
+            <option value="300">300</option>
+        </select>
+        <select name="type" id="type" onchange="g_set();">
+                <option value="p3">Круговая диаграмма</option>
+                <option value="gom">Спидометр</option>
+                <option value="bvg">Столбовая диаграмма</option>
+                <option value="lc">Линейный график</option>
+        </select>
+        <select name="color" id="color" onchange="g_set();">
+                <option value="ff0000">Красный</option>
+                <option value="00ff00">Зеленый</option>
+                <option value="0000ff" selected="selected">Синий</option>
+                <option value="000000">Черный</option>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td id="panel" width="200" valign="top">
+            <p>Перечислите все элементы:</p>
+            <p>Название элемента = число:</p>
+            <div id="dvalues">
+                <div id="dv1"><input class="str" type="text" id="dname1" name="dname[1]" value="" /> = <input class="num" type="text" id="dvalue1" name="dvalue[1]" value="" /> <span onclick="deletedv(1);" title="Удалить"> - </span></div>
+                <div id="dv2"><input class="str" type="text" id="dname2" name="dname[2]" value="" /> = <input class="num" type="text" id="dvalue2" name="dvalue[2]" value="" /> <span onclick="deletedv(2);" title="Удалить"> - </span></div>
+                <div id="cv2"></div>
+            </div>
+            <br />
+            <span onclick="g_set();" title="Обновить"> Обновить </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <span onclick="createdv();" title="Новый элемент"> + </span>
+        </td>
+        <td id="image" align="center">
+            <img name="image" src="http://chart.apis.google.com/chart?cht=p3&chco=0000ff&chd=t:0,0&chs=400x200&chl=|&chtt=%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" />
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+
+</table>
+
+</div>
+</center>
+</body>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -8,11 +8,52 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <title>Result</title>
+
+	<link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+	<!-- Google Webfonts -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,500' rel='stylesheet' type='text/css'> 
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css"> 
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="css/simple-line-icons.css">
+	<!-- Theme Style -->
+	<link rel="stylesheet" href="css/style.css">
+
+
+
 </head>
 <body>
-
+	<header id="fh5co-header" role="banner">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="navbar-header"> 
+						<!-- Mobile Toggle Menu Button -->
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle visible-xs-block" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+						<a class="navbar-brand" href="index.html"><img
+							src=images/social.png width="200" height="100" border=0> </a>
+						</div>
+						<div id="fh5co-navbar" class="navbar-collapse collapse">
+							<ul class="nav navbar-nav navbar-right">
+								<li class="active"><a href=help><img src=images/thankyou.jpg
+						width="100" height="100" border=0><span>Авторизация <span class="border"></span></span></a></li>
+								<li><a href=contacts><img src=images/contact.jpeg width="100" height="100" border=0><span>Контакты<span class="border"></span></span></a></li>
+								<li><a href="support.html"><img src=images/help.png width="100" height="100" border=0><span>Помощь<span class="border"></span></span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
 <p align=right><a href=index.html>Home</a>
   
   

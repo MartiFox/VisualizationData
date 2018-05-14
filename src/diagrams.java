@@ -27,6 +27,24 @@ public class diagrams extends HttpServlet {
 
 	      // 1-я строка документа
 		 String outString=stdhead.mkHead("Построение диаграммы")  +
+				 
+				 "<div id='fh5co-services'>"+
+				 "<div class='container'>"+
+				 	"<div class='row'>"+
+				 		"<div class='col-md-10 col-md-offset-1'>"+
+				 			"<div class='row'>"+
+				 				
+				 					"<div class='fh5co-desc'>"+
+				 					"<h5><a href=charting.html><img src=images/diagram.png width=\"50\"\r\n" + 
+				 					"height=\"50\" border=0>Перейти на постороение диаграмм онлайн</a></h5>"+
+				 					"</div>"+	
+				 				"</div>"+
+				 			"</div>"+
+				 		"</div>"+
+				 	"</div>"+
+				 "</div>"+
+				 "</div>"+
+				 "</div>"+	
 				 "<table align=right>"+
 			     "<tr><td align=center><a href=index.html>Home</a></td></tr>"+
 			 "</table>"+
@@ -79,7 +97,9 @@ public class diagrams extends HttpServlet {
 		    "</form>"+
 		   "</td>"+
 		  "</tr>"+
-		  "</table>";
+		  "</table>"  
+
+		  ;
 		 
 		
 		 
