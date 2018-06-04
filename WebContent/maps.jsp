@@ -1,10 +1,10 @@
-
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-    <head>
-        <meta charset="utf-8">
-        	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Карта</title>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Карта</title>
 	<link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
 	<!-- Google Webfonts -->
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
@@ -46,9 +46,9 @@
                 stroke-width: .5px;
             }
         </style>
-    </head>
-    <body>
-    <header id="fh5co-header" role="banner">
+</head>
+<body>
+<header id="fh5co-header" role="banner">
 		<nav class="navbar navbar-default" role="navigation">
 			<div class="container">
 				<div class="row">
@@ -74,13 +74,8 @@
 	</header>
     
     
-<!--        <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script> 
-        <script src="//d3js.org/topojson.v1.min.js"></script> -->
-        
-        <script src="js/d3.v3.min.js" charset="utf-8"></script>
-        <script src="js/topojson.v1.min.js"></script>
-        
-       
+        <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="//d3js.org/topojson.v1.min.js"></script>
         <script>
             /* JavaScript goes here. */
             // globals used in graph
@@ -226,6 +221,5 @@
                 return palette[approxIdx];
             }
         </script>
-        
-    </body>
+</body>
 </html>

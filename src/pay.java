@@ -40,7 +40,7 @@ public class pay extends HttpServlet {
 	        // Если код спонсора отсутствует, устанавливаются
 	        // атрибуты и управление передается на сервлет страницы ошибки
 	        request.setAttribute("error","Нет логина");
-	        request.setAttribute("return","help");
+	        request.setAttribute("return","login");
 	        (request.getRequestDispatcher("err")).forward(request,response);
 	      }       
 
@@ -61,7 +61,7 @@ public class pay extends HttpServlet {
 	        // Если кода спонсора нет в БД, устанавливаются
 	        // атрибуты и управление передается на сервлет страницы ошибки
 	        request.setAttribute("error","Логин " + id + " отсутствует в базе данных");
-	        request.setAttribute("return","help");
+	        request.setAttribute("return","login");
 	        (request.getRequestDispatcher("err")).forward(request,response);
 	      }
 	      String spName = (String)(e.nextElement());

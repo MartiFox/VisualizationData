@@ -22,7 +22,7 @@ import javax.servlet.http.*;
         // Если код спонсора не задан, устанавливаются атрибуты -
         // текст сообщения об ошибке и адрес страницы
         rq.setAttribute("error","Нет имени ");
-        rq.setAttribute("return","help");
+        rq.setAttribute("return","login");
         // Передача управления на сервлет ошибки
         (rq.getRequestDispatcher("err")).forward(rq,rs);
       }       
@@ -77,7 +77,7 @@ import javax.servlet.http.*;
         "</table>\n" +
         "<p></p>\n" +
         "<p align=center>\n" +
-        "<form align=center action=help>" +
+        "<form align=center action=login>" +
         "<input type=\"SUBMIT\" name=\"next\" value=\"Дальше\">\n" +
         "<INPUT TYPE=\"HIDDEN\" NAME=\"spcode\" VALUE=\"" +
         id + "\">\n</form>\n" +

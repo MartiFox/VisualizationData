@@ -45,34 +45,11 @@ public class diagrams extends HttpServlet {
 				 "</div>"+
 				 "</div>"+
 				 "</div>"+	
-				 "<table align=right>"+
-			     "<tr><td align=center><a href=index.html>Home</a></td></tr>"+
-			 "</table>"+
 		         "<table align=center "
 		         + "border='1'>"		 
-	   +"<caption class='bold'>Таблица значений</caption>"
 				 ;
 		
-		String qu = "SELECT x, y  FROM datatable";
-	      Vector vv = new Vector();
-	      String rStr;
-	      // Соединение с БД
-	      sql1 db = new sql1();
-	      try { rStr=db.query(qu,vv); }
-	      catch (Exception ex) { }
-	      db.commit(); db.close();
-   
-	      // Формирование HTML-таблицы координат 
-	      Enumeration e = vv.elements();
-	      while (e.hasMoreElements())
-	      {
-		        outString=outString + "<tr><td>" +
-	                  (String)(e.nextElement()) + 
-	                  "</td><td> " +
-	                  (String)(e.nextElement()) + 
-	                  "</td></tr>\n"
-	                 ;
-	      }
+
   
 		 
 		 outString=outString + 
@@ -80,17 +57,14 @@ public class diagrams extends HttpServlet {
 		"<table align=center>"+
 		 "<tr>"+
 		 "  <td>"+
-		    "<h3 align=center>Тип диаграммы</h3>"+
+		    "<h3 align=center>Выберите тип диаграммы</h3>"+
 		    "<form  action=diagramtypes.jsp>"+
 		     "<p align=center>"+
 		     "<select name='choice' >"+
-		      "<option value='1'>Гистограмма "+
-		      "<option value='2'>Круговая диаграмма "+
+		      "<option value='1'>Столбчатая диаграмма "+
+		      
 		      "<option value='3'>Кольцевая диаграмма "+
-		      "<option value='4'>Линейчатая диаграмма"+
-		      "<option value='5'>Диаграмма с областями "+
-		      "<option value='6'>Точечная диаграмма "+
-		      "<option value='7'>Лепестковая диаграмма "+
+
 		      "<option value='8'>График"+
 		     "</select>"+
 		     "<input type='SUBMIT' name='select' value='Выбрать' > "+

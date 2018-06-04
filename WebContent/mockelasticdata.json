@@ -367,6 +367,14 @@
             {
                "key": "GRD",
                "doc_count": 7
+            },
+            {
+               "key": "GRL",
+               "doc_count": 17
+            },
+            {
+               "key": "FIN",
+               "doc_count": 7
             }
          ]
       }

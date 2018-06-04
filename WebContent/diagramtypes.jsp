@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <script src="https://d3js.org/d3.v5.min.js"></script>
-<title>Result</title>
+<title>Диаграмма</title>
 
 	<link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
 	<!-- Google Webfonts -->
@@ -25,7 +25,9 @@
 	<link rel="stylesheet" href="css/simple-line-icons.css">
 	<!-- Theme Style -->
 	<link rel="stylesheet" href="css/style.css">
-
+	
+	<script src="js/d3.v3.min.js" charset="utf-8"></script>
+    <script src="js/topojson.v1.min.js"></script>
 
 
 </head>
@@ -54,13 +56,94 @@
 			</div>
 		</nav>
 	</header>
-<p align=right><a href=index.html>Home</a>
+
   
   
   <p align=center>
   
     <c:choose>
-        <c:when test="${param.choice == '1'}"><p align=center><img src=images/gist.png> </c:when>
+        <c:when test="${param.choice == '1'}">
+        <style>
+ #data-field {
+  height: 30px;
+  padding-right: 20px;
+}
+
+.bar {
+  width: 30px;
+  margin-right: 20px;
+  background-color: #e32929;
+  border: 1px solid #8a0405;
+  float: left;
+}
+ </style>
+<div>	
+<div id="data-field"></div>
+<p><input type="number" size="2" id="test" name="num" min="1" max="400" value="1"> </p>
+<button id="add-btn">Добавить элемент</button> Нажмите на столбик для удаления
+<div id="chart"></div>
+</div>
+<script>
+// наш набор данных
+var numbers = [5, 16, 26, 21];
+
+// функция обновления визуализции
+function update() {
+  // Обновление выборки
+  var selection = d3.select("#chart")
+    .selectAll(".bar").data(numbers)
+    .style("height", function(d) {
+      return d+"px";
+    })
+    .style("margin-top", function(d) {
+      return (400 - d)+"px";
+    });
+
+  // Входная выборка: создаем новые элементы, привязываем данные
+  // позиционируем, добавляем слушателя
+  selection.enter()
+    .append("div").attr("class", "bar")
+    .style("height", function(d) {
+      return d+"px";
+    })
+    .style("margin-top", function(d) {
+      return (400 - d)+"px";
+    })
+    .on("click", function(e, i) {
+      numbers.splice(i, 1);
+      update();
+    });
+
+  // Выходная выборка: удаляем DOM-элементы, к которым не привязаны данные
+  selection.exit().remove();
+
+  // Обновляем текстовое поле для отображение текущего набора данных
+  d3.select("#data-field").text("numbers: [" + numbers.join(", ") + "]")
+}
+
+update();
+
+
+var test = document.getElementById( 'test' );
+var testValue;
+
+test.onkeyup = getValueOfInputNumber;
+test.onchange = getValueOfInputNumber;
+
+function getValueOfInputNumber() {
+		testValue = this.value; // Вот
+		this.nextElementSibling.innerHTML = testValue;
+}
+
+// Добавляем случайное новое значение в набор данных
+d3.select("#add-btn").on("click", function(e) {
+  numbers.push(testValue);
+  update();
+});
+</script>
+
+ </c:when>
+        
         <c:when test="${param.choice == '2'}"><p align=center><img src=images/pie.png></c:when>
         <c:when test="${param.choice == '3'}"><button onClick="changeData()">Change Data</button>
 <script src="http://d3js.org/d3.v3.min.js"></script>
