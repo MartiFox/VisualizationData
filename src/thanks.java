@@ -76,7 +76,7 @@ public class thanks extends HttpServlet {
 	        // Если кода спонсора нет в БД, устанавливаются
 	        // атрибуты и управление передается на сервлет страницы ошибки
 	        request.setAttribute("error","Логин " + spons_id + " отсутствует в базе данных");
-	        request.setAttribute("return","help");
+	        request.setAttribute("return","login");
 	        (request.getRequestDispatcher("err")).forward(request,response);
 	      }
 	      String Ssum = (String)(e.nextElement());
@@ -93,13 +93,12 @@ public class thanks extends HttpServlet {
 	      	      db.close();
 	        }
 	        
-		outString=stdhead.mkHead("Cпасибо")+
-		         "<p align=center><a href=index.html>Home</a>" +
+		outString=stdhead.mkHead("Кабинет пользователя")+
 		         "<p align=center>"+
-		         "<H1 align=center><font color=red>Спасибо за поддержку, "+spons_id+
+		         "<H1 align=center><font color=red>Кабинет пользователя "+spons_id+
 		         "!</font></h1>"+
 		         "<p>Внесенная сумма:"+sum+
-		         "<p>Общая сумма, полученная от "+spons_id+":"+i
+		         "<p>Баланс"+spons_id+":"+i
 		         + "</body>" + "</html>";         
 
 		         //		 outString="<h1 align=center><font color=red>Спасибо за поддержку!</font></h1>";

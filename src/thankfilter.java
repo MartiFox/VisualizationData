@@ -39,7 +39,7 @@ import java.util.*;
       {
       // Если были ошибки, устанавливаются атрибуты запроса
         rq.setAttribute("error",message);
-        rq.setAttribute("return","help");
+        rq.setAttribute("return","login");
       }
       else     
           rq.setAttribute("error","OK");

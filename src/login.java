@@ -39,10 +39,6 @@ public class login extends HttpServlet {
 		 String outString=stdhead.mkHead("Авторизация") +	
 				 "<h2 align=center>Авторизация</h2>"+
 
-				 "<table align=right>"+
-				     "<tr><td align=center><a href=index.html>Home</a></td></tr>"+
-				 "</table>"+
-
 				"<p><table align=center>"+
 				 " <tr>"+
 				   "<td width=50% align=center>Введите свой логин"+
