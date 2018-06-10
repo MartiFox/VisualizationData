@@ -135,7 +135,7 @@ function getValueOfInputNumber() {
 		this.nextElementSibling.innerHTML = testValue;
 }
 
-// Добавляем случайное новое значение в набор данных
+// Добавляем новое значение в набор данных
 d3.select("#add-btn").on("click", function(e) {
   numbers.push(testValue);
   update();
@@ -145,8 +145,9 @@ d3.select("#add-btn").on("click", function(e) {
  </c:when>
         
         <c:when test="${param.choice == '2'}"><p align=center><img src=images/pie.png></c:when>
-        <c:when test="${param.choice == '3'}"><button onClick="changeData()">Change Data</button>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+        <c:when test="${param.choice == '3'}">
+<button onClick="changeData()">Change Data</button>
+<script src="js/d3.v3.min.js"></script>
 <script src="Donut3D.js"></script>
 <script>
 
@@ -180,7 +181,34 @@ function randomData(){
         <c:when test="${param.choice == '5'}"><p align=center><img src=images/areas.png>;</c:when>
         <c:when test="${param.choice == '6'}"><p align=center><img src=images/dot.png>;</c:when>
         <c:when test="${param.choice == '7'}"><p align=center><img src=images/dot.png>;</c:when>
-        <c:when test="${param.choice == '8'}"><script>
+        <c:when test="${param.choice == '8'}">
+        <style>
+body {
+  font: 10px sans-serif;
+}
+.y.axisRight text {
+    fill: orange;
+}
+.y.axisLeft text {
+    fill: steelblue;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.bar1 {
+  fill: steelblue;
+}
+.bar2 {
+  fill: orange;
+}
+.x.axis path {
+  display: none;
+}
+</style>
+        <script>
 var margin = {top: 80, right: 80, bottom: 80, left: 80},
     width = 600 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;

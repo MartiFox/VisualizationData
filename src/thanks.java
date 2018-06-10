@@ -96,9 +96,9 @@ public class thanks extends HttpServlet {
 		outString=stdhead.mkHead("Кабинет пользователя")+
 		         "<p align=center>"+
 		         "<H1 align=center><font color=red>Кабинет пользователя "+spons_id+
-		         "!</font></h1>"+
+		         "</font></h1>"+
 		         "<p>Внесенная сумма:"+sum+
-		         "<p>Баланс"+spons_id+":"+i
+		         "<p>Баланс "+spons_id+":"+i
 		         + "</body>" + "</html>";         
 
 		         //		 outString="<h1 align=center><font color=red>Спасибо за поддержку!</font></h1>";
