@@ -83,10 +83,18 @@
 <button id="add-btn">Добавить элемент</button> Нажмите на столбик для удаления
 <div id="chart"></div>
 </div>
+
+
 <script>
+
+
 // наш набор данных
 var numbers = [5, 16, 26, 21];
 
+</script>
+
+
+<script>
 // функция обновления визуализции
 function update() {
   // Обновление выборки
@@ -135,6 +143,8 @@ function getValueOfInputNumber() {
 		this.nextElementSibling.innerHTML = testValue;
 }
 
+
+
 // Добавляем новое значение в набор данных
 d3.select("#add-btn").on("click", function(e) {
   numbers.push(testValue);
@@ -177,9 +187,191 @@ function randomData(){
 		return {label:d.label, value:1000*Math.random(), color:d.color};});
 }
 </script></c:when>
-        <c:when test="${param.choice == '4'}"><p align=center><img src=images/bar.png>;</c:when>
-        <c:when test="${param.choice == '5'}"><p align=center><img src=images/areas.png>;</c:when>
-        <c:when test="${param.choice == '6'}"><p align=center><img src=images/dot.png>;</c:when>
+        <c:when test="${param.choice == '4'}">
+<style>
+			.axis path,
+			.axis line {
+				fill: none;
+				stroke: black;
+				shape-rendering: crispEdges;
+			}
+			
+			.axis text {
+				font-family: sans-serif;
+				font-size: 11px;
+			}
+
+		</style>
+		<script>
+
+			//Width and height
+			var w = 1000;
+			var h = 450;
+			var padding = 30;
+			
+			var dataset = [
+							[5, 20], [480, 90], [250, 50], [100, 33], [330, 95],
+							[410, 12], [475, 44], [25, 67], [85, 21], [220, 88],
+							[600, 150]
+						  ];
+
+			//Create scale functions
+			var xScale = d3.scale.linear()
+								 .domain([0, d3.max(dataset, function(d) { return d[0]; })])
+								 .range([padding, w - padding * 2]);
+
+			var yScale = d3.scale.linear()
+								 .domain([0, d3.max(dataset, function(d) { return d[1]; })])
+								 .range([h - padding, padding]);
+
+			var rScale = d3.scale.linear()
+								 .domain([0, d3.max(dataset, function(d) { return d[1]; })])
+								 .range([2, 5]);
+
+			//Define X axis
+			var xAxis = d3.svg.axis()
+							  .scale(xScale)
+							  .orient("bottom")
+							  .ticks(5);
+
+			//Define Y axis
+			var yAxis = d3.svg.axis()
+							  .scale(yScale)
+							  .orient("left")
+							  .ticks(5);
+
+			//Create SVG element
+			var svg = d3.select("body")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h);
+
+			//Create circles
+			svg.selectAll("circle")
+			   .data(dataset)
+			   .enter()
+			   .append("circle")
+			   .attr("cx", function(d) {
+			   		return xScale(d[0]);
+			   })
+			   .attr("cy", function(d) {
+			   		return yScale(d[1]);
+			   })
+			   .attr("r", function(d) {
+			   		return rScale(d[1]);
+			   });
+
+			//Create labels
+			svg.selectAll("text")
+			   .data(dataset)
+			   .enter()
+			   .append("text")
+			   .text(function(d) {
+			   		return d[0] + "," + d[1];
+			   })
+			   .attr("x", function(d) {
+			   		return xScale(d[0]);
+			   })
+			   .attr("y", function(d) {
+			   		return yScale(d[1]);
+			   })
+			   .attr("font-family", "sans-serif")
+			   .attr("font-size", "11px")
+			   .attr("fill", "red");
+			
+			//Create X axis
+			svg.append("g")
+				.attr("class", "axis")
+				.attr("transform", "translate(0," + (h - padding) + ")")
+				.call(xAxis);
+			
+			//Create Y axis
+			svg.append("g")
+				.attr("class", "axis")
+				.attr("transform", "translate(" + padding + ",0)")
+				.call(yAxis);
+
+		</script>
+</c:when>        
+        
+        
+        
+        <c:when test="${param.choice == '5'}">
+        <script type="text/javascript">
+
+			//Width and height
+			var w = 1000;
+			var h = 400;
+			var barPadding = 1;
+			
+			var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+							11, 12, 15, 20, 18, 17, 16, 18, 23, 25,
+							11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+			
+			
+			d3.max(dataset, function(d) {    //Returns 480
+			    return d[0];  //References first value in each sub-array
+			});
+			var xScale = d3.scale.linear()
+            .domain([0, d3.max(dataset, function(d) { return d[0]; })])
+            .range([0, w]);
+			
+			//Create SVG element
+			var svg = d3.select("body")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h);
+
+			svg.selectAll("rect")
+			   .data(dataset)
+			   .enter()
+			   .append("rect")
+			   .attr("x", function(d, i) {
+			   		return i * (w / dataset.length);
+			   })
+			   .attr("y", function(d) {
+			   		return h - (d * 4);
+			   })
+			   .attr("width", w / dataset.length - barPadding)
+			   .attr("height", function(d) {
+			   		return d * 4;
+			   })
+			   .attr("fill", function(d) {
+					return "rgb(" + (d * 10) + ",0,0)";
+			   });
+
+			svg.selectAll("text")
+			   .data(dataset)
+			   .enter()
+			   .append("text")
+			   .text(function(d) {
+			   		return d;
+			   })
+			   .attr("text-anchor", "middle")
+			   .attr("x", function(d, i) {
+			   		return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
+			   })
+			   .attr("y", function(d) {
+			   		return h - (d * 4) + 14;
+			   })
+			   .attr("font-family", "sans-serif")
+			   .attr("font-size", "11px")
+			   .attr("fill", "white");
+
+
+			
+		</script>
+        
+        
+        </c:when>
+        <c:when test="${param.choice == '6'}">
+ <script> var temp_soups = new Array();  </script>    
+        <c:forEach items="${soups}" var="el"> 
+temp_soups.push(<c:out value="${el.id}"/>);
+</c:forEach>
+        
+        
+        </c:when>
         <c:when test="${param.choice == '7'}"><p align=center><img src=images/dot.png>;</c:when>
         <c:when test="${param.choice == '8'}">
         <style>

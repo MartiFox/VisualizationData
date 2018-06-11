@@ -64,6 +64,8 @@ public class diagrams extends HttpServlet {
 		      "<option value='1'>Столбчатая диаграмма "+
 		      
 		      "<option value='3'>Кольцевая диаграмма "+
+		      "<option value='4'>Точечная диаграмма"+
+		      "<option value='5'>Столбиковая со значениями"+
 
 		      "<option value='8'>График"+
 		     "</select>"+
