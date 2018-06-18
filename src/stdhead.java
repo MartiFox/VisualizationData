@@ -37,9 +37,9 @@
 						"</div>"+
 						"<div id='fh5co-navbar' class='navbar-collapse collapse'>"+
 							"<ul class='nav navbar-nav navbar-right'>"+
-								"<li class='active'><a href='login'><img src=images/thankyou.jpg width='100' height='100' border=0><span>Авторизация <span class='border'></span></span></a></li>"+
-								"<li><a href=contacts><img src=images/contact.jpeg width='100' height='100' border=0><span>Контакты<span class='border'></span></span></a></li>"+
-								"<li><a href='support.html'><img src=images/help.png width='100' height='100' border=0><span>Помощь<span class='border'></span></span></a></li>"+
+								"<li class='active'><a href='login'><img src=images/thankyou.jpg width='100' height='100' border=0><span>Авторізація <span class='border'></span></span></a></li>"+
+								"<li><a href=contacts><img src=images/contact.jpeg width='100' height='100' border=0><span>Контакти<span class='border'></span></span></a></li>"+
+								"<li><a href='support.html'><img src=images/help.png width='100' height='100' border=0><span>Допомога<span class='border'></span></span></a></li>"+
 							"</ul>"+
 						"</div>"+
 					"</div>"+

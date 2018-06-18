@@ -36,18 +36,18 @@ public class login extends HttpServlet {
 	      PrintWriter out=response.getWriter();
 
 	      // 1-я строка документа
-		 String outString=stdhead.mkHead("Авторизация") +	
-				 "<h2 align=center>Авторизация</h2>"+
+		 String outString=stdhead.mkHead("Авторізація") +	
+				 "<h2 align=center>Авторізація</h2>"+
 
 				"<p><table align=center>"+
 				 " <tr>"+
-				   "<td width=50% align=center>Введите свой логин"+
+				   "<td width=50% align=center>Введіть свій логін"+
 				    "<p><form action='pay'>"+
 				   " <input type='text' name='spname', value=''>"+
 				    " <input type='SUBMIT' name='sendcode' value='OK'>"+
 				   " </form>"+
 				  " </td>"+
-				   "<td width=50% align=center>Если Вы впервые на сайте, введите логин для регистрации"+
+				   "<td width=50% align=center>Якщо Ви вперше на сайті, введіть логін для реєстрації"+
 				    "<p><form action='registration'>"+
 				    "<input type='text' name='spname', value=''>"+
 				     "<input type='SUBMIT' name='sendname' value='OK'>"+

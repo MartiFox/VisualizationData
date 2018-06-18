@@ -21,7 +21,7 @@ import javax.servlet.http.*;
       {
         // Если код спонсора не задан, устанавливаются атрибуты -
         // текст сообщения об ошибке и адрес страницы
-        rq.setAttribute("error","Нет имени ");
+        rq.setAttribute("error","Немає імені ");
         rq.setAttribute("return","login");
         // Передача управления на сервлет ошибки
         (rq.getRequestDispatcher("err")).forward(rq,rs);
@@ -67,9 +67,9 @@ import javax.servlet.http.*;
       db.close();
 
       // Фомрирование остальной части HTML
-      String outStr = stdhead.mkHead("Ваш логин")+
+      String outStr = stdhead.mkHead("Ваш логін")+
     	"<p align=center>"+text+"<br>\n"+
-        "<p align=center>Ваш логин:<br>\n" +
+        "<p align=center>Ваш логін:<br>\n" +
         "<table align=center border=3>\n" +
         "  <tr><td><big>&nbsp;&nbsp;" +
         s1 +
@@ -78,7 +78,7 @@ import javax.servlet.http.*;
         "<p></p>\n" +
         "<p align=center>\n" +
         "<form align=center action=login>" +
-        "<input type=\"SUBMIT\" name=\"next\" value=\"Дальше\">\n" +
+        "<input type=\"SUBMIT\" name=\"next\" value=\"Далі\">\n" +
         "<INPUT TYPE=\"HIDDEN\" NAME=\"spcode\" VALUE=\"" +
         id + "\">\n</form>\n" +
         "</body>\n" +

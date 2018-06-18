@@ -33,7 +33,7 @@ public class contacts extends HttpServlet {
 	      // 1-я строка документа
 
 		
-		String outString=stdhead.mkHead("Контакты")  +
+		String outString=stdhead.mkHead("Контакти")  +
 "<div id='fh5co-services'>"+
 	"<div class='container'>"+
 		"<div class='row'>"+
@@ -43,8 +43,8 @@ public class contacts extends HttpServlet {
 					"<div class='col-md-4 col-sm-6 col-xs-6 col-xxs-12 fh5co-service'>"+
 						"<div class='fh5co-icon to-animate'><i class='icon-present'></i></div>"+
 						"<div class='fh5co-desc'>"+
-							"<h3>Mail</h3>"+
-							"<p>gmail</p>"+
+							"<h3>Mail </br> Онлайн-допомога</h3>"+
+							"<p>akolchin31@gmail.com</p>"+
 						"</div>"+	
 					"</div>"+
 				"</div>"+

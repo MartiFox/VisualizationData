@@ -16,8 +16,8 @@ import javax.servlet.http.*;
     {
 
       // Формирование HTML-документа
-      String outStr=stdhead.mkHead("Ошибка") +
-               "<h2 align=center>==Ошибка!==<br>" + 
+      String outStr=stdhead.mkHead("Помилка") +
+               "<h2 align=center>==Помилка!==<br>" + 
       // Текст сообщения подставляется из атрибута "error"
                 (String)(rq.getAttribute("error")) +
                 "</h2>\n<p align=center>\n" +

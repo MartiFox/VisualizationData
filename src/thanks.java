@@ -93,11 +93,11 @@ public class thanks extends HttpServlet {
 	      	      db.close();
 	        }
 	        
-		outString=stdhead.mkHead("Кабинет пользователя")+
+		outString=stdhead.mkHead("Кабінет користувача")+
 		         "<p align=center>"+
-		         "<H1 align=center><font color=red>Кабинет пользователя "+spons_id+
+		         "<H1 align=center><font color=red>Кабінет користувача "+spons_id+
 		         "</font></h1>"+
-		         "<p>Внесенная сумма:"+sum+
+		         "<p>Внесена сума:"+sum+
 		         "<p>Баланс "+spons_id+":"+i
 		         + "</body>" + "</html>";         
 

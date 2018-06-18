@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <script src="https://d3js.org/d3.v5.min.js"></script>
-<title>Диаграмма</title>
+<title>Діаграма</title>
 
 	<link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
 	<!-- Google Webfonts -->
@@ -46,9 +46,9 @@
 						<div id="fh5co-navbar" class="navbar-collapse collapse">
 							<ul class="nav navbar-nav navbar-right">
 								<li class="active"><a href=help><img src=images/thankyou.jpg
-						width="100" height="100" border=0><span>Авторизация <span class="border"></span></span></a></li>
-								<li><a href=contacts><img src=images/contact.jpeg width="100" height="100" border=0><span>Контакты<span class="border"></span></span></a></li>
-								<li><a href="support.html"><img src=images/help.png width="100" height="100" border=0><span>Помощь<span class="border"></span></span></a></li>
+						width="100" height="100" border=0><span>Авторізация <span class="border"></span></span></a></li>
+								<li><a href=contacts><img src=images/contact.jpeg width="100" height="100" border=0><span>Контакти<span class="border"></span></span></a></li>
+								<li><a href="support.html"><img src=images/help.png width="100" height="100" border=0><span>Допомога<span class="border"></span></span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -80,7 +80,7 @@
 <div>	
 <div id="data-field"></div>
 <p><input type="number" size="2" id="test" name="num" min="1" max="400" value="1"> </p>
-<button id="add-btn">Добавить элемент</button> Нажмите на столбик для удаления
+<button id="add-btn">Додати елемент</button> Натисніть на стовпчик для видалення
 <div id="chart"></div>
 </div>
 
@@ -104,7 +104,7 @@ function update() {
       return d+"px";
     })
     .style("margin-top", function(d) {
-      return (400 - d)+"px";
+      return (300 - d)+"px";
     });
 
   // Входная выборка: создаем новые элементы, привязываем данные
@@ -115,7 +115,7 @@ function update() {
       return d+"px";
     })
     .style("margin-top", function(d) {
-      return (400 - d)+"px";
+      return (300 - d)+"px";
     })
     .on("click", function(e, i) {
       numbers.splice(i, 1);
@@ -212,7 +212,7 @@ function randomData(){
 			var dataset = [
 							[5, 20], [480, 90], [250, 50], [100, 33], [330, 95],
 							[410, 12], [475, 44], [25, 67], [85, 21], [220, 88],
-							[600, 150]
+							[273, 83]
 						  ];
 
 			//Create scale functions
@@ -304,9 +304,9 @@ function randomData(){
 			var h = 400;
 			var barPadding = 1;
 			
-			var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
-							11, 12, 15, 20, 18, 17, 16, 18, 23, 25,
-							11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+			var dataset = [ 32, 10, 13, 54, 21, 25, 22, 78, 64, 34,
+							11, 13, 15, 46, 33, 45, 16, 18, 23, 25,
+							23, 41, 15, 20, 18, 21, 13, 63, 31, 25 ];
 			
 			
 			d3.max(dataset, function(d) {    //Returns 480
@@ -365,14 +365,129 @@ function randomData(){
         
         </c:when>
         <c:when test="${param.choice == '6'}">
- <script> var temp_soups = new Array();  </script>    
-        <c:forEach items="${soups}" var="el"> 
-temp_soups.push(<c:out value="${el.id}"/>);
-</c:forEach>
+<form name="upload">
+    <input type="file" name="myfile">
+    <input type="submit" value="Загрузить">
+  </form>
+
+  <div id="log">Прогресс загрузки</div>
+
+  <script>
+    function log(html) {
+      document.getElementById('log').innerHTML = html;
+    }
+
+    document.forms.upload.onsubmit = function() {
+      var file = this.elements.myfile.files[0];
+      if (file) {
+        upload(file);
+      }
+      return false;
+    }
+
+
+    function upload(file) {
+
+      var xhr = new XMLHttpRequest();
+
+      // обработчики можно объединить в один,
+      // если status == 200, то это успех, иначе ошибка
+      xhr.onload = xhr.onerror = function() {
+        if (this.status == 200) {
+          log("success");
+        } else {
+          log("error " + this.status);
+        }
+      };
+
+      // обработчик для закачки
+      xhr.upload.onprogress = function(event) {
+        log(event.loaded + ' / ' + event.total);
+      }
+
+      xhr.open("POST", "upload", true);
+      xhr.send(file);
+
+    }
+  </script>
         
         
         </c:when>
-        <c:when test="${param.choice == '7'}"><p align=center><img src=images/dot.png>;</c:when>
+        <c:when test="${param.choice == '7'}">
+	      
+	      		
+			<script>
+			//Width and height
+			var w = 1000;
+			var h = 400;
+			var barPadding = 1;
+			var dataset;
+			 while (e.hasMoreElements())
+		      {
+				 dataset[i] =(e.nextElement());
+				 i++;
+		      }
+			// var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+			//				11, 12, 15, 20, 18, 17, 16, 18, 23, 25,
+			//				11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+			
+			
+			d3.max(dataset, function(d) {    //Returns 480
+			    return d[0];  //References first value in each sub-array
+			});
+			var xScale = d3.scale.linear()
+            .domain([0, d3.max(dataset, function(d) { return d[0]; })])
+            .range([0, w]);
+			
+			//Create SVG element
+			var svg = d3.select("body")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h);
+
+			svg.selectAll("rect")
+			   .data(dataset)
+			   .enter()
+			   .append("rect")
+			   .attr("x", function(d, i) {
+			   		return i * (w / dataset.length);
+			   })
+			   .attr("y", function(d) {
+			   		return h - (d * 4);
+			   })
+			   .attr("width", w / dataset.length - barPadding)
+			   .attr("height", function(d) {
+			   		return d * 4;
+			   })
+			   .attr("fill", function(d) {
+					return "rgb(" + (d * 10) + ",0,0)";
+			   });
+
+			svg.selectAll("text")
+			   .data(dataset)
+			   .enter()
+			   .append("text")
+			   .text(function(d) {
+			   		return d;
+			   })
+			   .attr("text-anchor", "middle")
+			   .attr("x", function(d, i) {
+			   		return i * (w/dataset.length) + (w/dataset.length - barPadding) / 2;
+			   })
+			   .attr("y", function(d) {
+			   		return h - (d * 4) + 14;
+			   })
+			   .attr("font-family", "sans-serif")
+			   .attr("font-size", "11px")
+			   .attr("fill", "white");
+
+
+			
+		</script>
+        
+        
+        
+        </c:when>
         <c:when test="${param.choice == '8'}">
         <style>
 body {

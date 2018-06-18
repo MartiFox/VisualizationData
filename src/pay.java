@@ -39,7 +39,7 @@ public class pay extends HttpServlet {
 	      {
 	        // Если код спонсора отсутствует, устанавливаются
 	        // атрибуты и управление передается на сервлет страницы ошибки
-	        request.setAttribute("error","Нет логина");
+	        request.setAttribute("error","Немає логину");
 	        request.setAttribute("return","login");
 	        (request.getRequestDispatcher("err")).forward(request,response);
 	      }       
@@ -60,7 +60,7 @@ public class pay extends HttpServlet {
 	      {
 	        // Если кода спонсора нет в БД, устанавливаются
 	        // атрибуты и управление передается на сервлет страницы ошибки
-	        request.setAttribute("error","Логин " + id + " отсутствует в базе данных");
+	        request.setAttribute("error","Логин " + id + " відсутний в базі даних");
 	        request.setAttribute("return","login");
 	        (request.getRequestDispatcher("err")).forward(request,response);
 	      }
@@ -81,9 +81,8 @@ public class pay extends HttpServlet {
 		
 		String outString;
 		outString=stdhead.mkHead("Оплата")+
-		         "<p align=right><a href=index.html>Home</a>" +
 		         "<p align=center>"+
-		         "<H1 align=center><font color=black>Ваш спонсорский взнос</font></h1>"
+		         "<H1 align=center><font color=black>Ваш внесок</font></h1>"
 		         ;         
 
 
@@ -94,7 +93,7 @@ public class pay extends HttpServlet {
 		    "<tr><td>"+
 		    "<form action='thanks'>"+
 		     " <input type='text' name='one' value='' class='filterInput'>"+
-		      "<input type='SUBMIT' name='send' value='Подтвердить'><br>"+
+		      "<input type='SUBMIT' name='send' value='Підтвердити'><br>"+
 		         "</form>"+
 		        " </td></tr>"+
 		         "</table>"+  

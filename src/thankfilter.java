@@ -25,13 +25,13 @@ import java.util.*;
         catch (NumberFormatException nfe) 
         {  
           erFlag=true;
-          message=message.concat("Неверный формат. Введите числовое значение <br>");  
+          message=message.concat("Невірний формат. Введіть числове значення<br>");  
         }
       }
       if ((sum.floatValue()<1))
       {  
         erFlag=true;
-        message=message.concat("Введите значение больше нуля<br>");  
+        message=message.concat("Введіть значення більше нуля<br>");  
       }
       
       

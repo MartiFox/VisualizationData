@@ -1,4 +1,4 @@
-
+ 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//RU" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -18,7 +18,7 @@
 	<link rel="stylesheet" href="css/style.css">
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
     <meta name="keywords" content="графики, диаграммы, онлайн, создание, изображение, график, диаграмма" />
-    <meta name="description" content="Создайте график онлайн, в окне браузера, получите готовое изображение для публикации на своем сайте, форуме, блоге" />
+    <meta name="description" content="Создайте график онлайн" />
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <style type="text/css">
@@ -109,7 +109,7 @@ function g_set() {
         dname = document.getElementById('dname'+el).value;
         dvalue = document.getElementById('dvalue'+el).value
         if(dname == '' | dvalue == '') {
-            alert('Все поля должны быть заполнены!');
+            alert('Всі поля повинні бути заповнені!');
             return false;
         }
         if(s1 != '&chd=t:') s1 += ','+urlencode(dvalue);
@@ -153,9 +153,9 @@ function deletedv(dvid) {
 						<div id="fh5co-navbar" class="navbar-collapse collapse">
 							<ul class="nav navbar-nav navbar-right">
 								<li class="active"><a href=help><img src=images/thankyou.jpg
-						width="100" height="100" border=0><span>Авторизация <span class="border"></span></span></a></li>
-								<li><a href=contacts><img src=images/contact.jpeg width="100" height="100" border=0><span>Контакты<span class="border"></span></span></a></li>
-								<li><a href="support.html"><img src=images/help.png width="100" height="100" border=0><span>Помощь<span class="border"></span></span></a></li>
+						width="100" height="100" border=0><span>Авторізація <span class="border"></span></span></a></li>
+								<li><a href=contacts><img src=images/contact.jpeg width="100" height="100" border=0><span>Контакти<span class="border"></span></span></a></li>
+								<li><a href="support.html"><img src=images/help.png width="100" height="100" border=0><span>Допомога<span class="border"></span></span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -171,7 +171,7 @@ function deletedv(dvid) {
 <table border="1" cellspacing="0" id="maintable">
     <tr>
         <td colspan="3">
-        <span>Параметры:</span> <input type="text" name="title" id="title" value="Название диаграммы" /><select name="width" id="width" onchange="g_set();">
+        <span>Параметри:</span> <input type="text" name="title" id="title" value="Назва діаграми" /><select name="width" id="width" onchange="g_set();">
             <option value="300">200</option>
             <option value="300">300</option>
             <option value="400" selected="selected">400</option>
@@ -188,31 +188,31 @@ function deletedv(dvid) {
             <option value="300">300</option>
         </select>
         <select name="type" id="type" onchange="g_set();">
-                <option value="p3">Круговая диаграмма</option>
-                <option value="gom">Спидометр</option>
-                <option value="bvg">Столбовая диаграмма</option>
-                <option value="lc">Линейный график</option>
+                <option value="p3">Кругова діаграма</option>
+                <option value="gom">Спідометр</option>
+                <option value="bvg">Стовбчата діаграма</option>
+                <option value="lc">Лінійний графік</option>
         </select>
         <select name="color" id="color" onchange="g_set();">
-                <option value="ff0000">Красный</option>
-                <option value="00ff00">Зеленый</option>
-                <option value="0000ff" selected="selected">Синий</option>
-                <option value="000000">Черный</option>
+                <option value="ff0000">Червоний</option>
+                <option value="00ff00">Зелений</option>
+                <option value="0000ff" selected="selected">Синій</option>
+                <option value="000000">Чорний</option>
         </select>
         </td>
     </tr>
     <tr>
         <td id="panel" width="200" valign="top">
-            <p>Перечислите все элементы:</p>
-            <p>Название элемента = число:</p>
+            <p>Перерахуйте всі елементи:</p>
+            <p>Назва елемента = число:</p>
             <div id="dvalues">
-                <div id="dv1"><input class="str" type="text" id="dname1" name="dname[1]" value="" /> = <input class="num" type="text" id="dvalue1" name="dvalue[1]" value="" /> <span onclick="deletedv(1);" title="Удалить"> - </span></div>
-                <div id="dv2"><input class="str" type="text" id="dname2" name="dname[2]" value="" /> = <input class="num" type="text" id="dvalue2" name="dvalue[2]" value="" /> <span onclick="deletedv(2);" title="Удалить"> - </span></div>
+                <div id="dv1"><input class="str" type="text" id="dname1" name="dname[1]" value="" /> = <input class="num" type="text" id="dvalue1" name="dvalue[1]" value="" /> <span onclick="deletedv(1);" title="Видалити"> - </span></div>
+                <div id="dv2"><input class="str" type="text" id="dname2" name="dname[2]" value="" /> = <input class="num" type="text" id="dvalue2" name="dvalue[2]" value="" /> <span onclick="deletedv(2);" title="Видалити"> - </span></div>
                 <div id="cv2"></div>
             </div>
             <br />
-            <span onclick="g_set();" title="Обновить"> Обновить </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-            <span onclick="createdv();" title="Новый элемент"> + </span>
+            <span onclick="g_set();" title="Оновити"> Оновити </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <span onclick="createdv();" title="Новий елемент"> + </span>
         </td>
         <td id="image" align="center">
             <img name="image" src="http://chart.apis.google.com/chart?cht=p3&chco=0000ff&chd=t:0,0&chs=400x200&chl=|&chtt=%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" />
